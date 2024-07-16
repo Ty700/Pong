@@ -1,0 +1,36 @@
+Components
+    Ball
+    Paddles
+    Scoreboard
+    Screen
+
+Steps:
+    Create the Screen
+
+    Create a paddle
+        - W: 20px
+        - H: 100px
+        - x_pos: +350
+            - other one will be -350
+        - y_pos: 0
+        - Key Presses: up and down
+        
+
+    Implement movement of new Paddle
+
+    Create another paddle
+
+    Create the ball with movement
+
+    Collision detection with wall and bounce
+
+    Collision detection with paddle
+
+    Detect when paddle misses
+
+    Keep score
+
+Future:
+    - Implement a title screen with instructions
+    - On the title screen users can pick the color of their paddle
+    - Maybe a difficulty??
