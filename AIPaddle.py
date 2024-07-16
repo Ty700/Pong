@@ -7,24 +7,28 @@ class AIPaddle:
     def __init__(self):
         self.ai_paddle = self.create_paddle()
         self.direction = UP
-        
+
     def create_paddle(self):
 
-        paddle = turtle.Turtle(
+        new_paddle = turtle.Turtle(
             shape='square',
-            visible=True,
+            visible=False,
         )
-    
-        paddle.color('White')
-        paddle.resizemode('user')
-        paddle.shapesize(1, 5)
-        paddle.penup()
-        paddle.speed('fastest')
-        paddle.goto(x=350,y=0)
-        paddle.setheading(UP)
+
+        new_paddle.color('White')
+        new_paddle.resizemode('user')
+        new_paddle.shapesize(1, 5)
+        new_paddle.penup()
+        new_paddle.speed('fastest')
+        new_paddle.goto(x=350,y=0)
+        new_paddle.setheading(UP)
         
-        return paddle
-    
+        # Paddle is created in invisible mode so we don't see the setup
+        # Now that all the paddle configs are made, we can show it
+        new_paddle.showturtle()
+
+        return new_paddle
+
     def move(self):
         cur_pos = self.ai_paddle.pos()
 
