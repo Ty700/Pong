@@ -13,7 +13,7 @@ class Paddle:
         self.paddle.resizemode('user')
         self.paddle.shapesize(1, 5)
         self.paddle.penup()
-        self.paddle.speed('normal')
+        self.paddle.speed('fastest')
         self.paddle.goto(x=xpos, y= 0)
         self.paddle.seth(90)
         self.paddle.showturtle()

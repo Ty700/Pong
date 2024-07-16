@@ -19,16 +19,15 @@ def pong():
 
     game_is_on = True
 
-    screen.onkeypress(key='Up',     fun=user_paddle.move_up)
-    screen.onkeypress(key='Down',   fun=user_paddle.move_down)
+    screen.onkey(key='Up',     fun=user_paddle.move_up)
+    screen.onkey(key='Down',   fun=user_paddle.move_down)
+    screen.onkey(key='Delete', fun=screen.exitonclick)
     
     while game_is_on:
         screen.update()
-        time.sleep(0.1)
-
         ai_paddle.move()
 
-        screen.onkeypress(key='Delete', fun=screen.exitonclick)
+        
         
 
 

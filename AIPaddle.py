@@ -1,44 +1,36 @@
-import turtle
+import time
+from Paddle import Paddle
 
 UP = 90
 DOWN = 270
 
-class AIPaddle:
+class AIPaddle(Paddle):
     def __init__(self):
-        self.ai_paddle = self.create_paddle()
-        self.direction = UP
-
-    def create_paddle(self):
-
-        new_paddle = turtle.Turtle(
-            shape='square',
-            visible=False,
-        )
-
-        new_paddle.color('White')
-        new_paddle.resizemode('user')
-        new_paddle.shapesize(1, 5)
-        new_paddle.penup()
-        new_paddle.speed('fastest')
-        new_paddle.goto(x=350,y=0)
-        new_paddle.setheading(UP)
-        
-        # Paddle is created in invisible mode so we don't see the setup
-        # Now that all the paddle configs are made, we can show it
-        new_paddle.showturtle()
-
-        return new_paddle
+        super().__init__(xpos=350)
+        self.last_movement = 0
+        self.__INPUT_DELAY = 0.1 # 100ms
 
     def move(self):
-        cur_pos = self.ai_paddle.pos()
+        time_now = time.time()
 
-        # Reached the top of the screen, needs to go down now
-        if cur_pos[1] == 240:
-            self.ai_paddle.setheading(DOWN)
-        
-        # Reached the bottom
-        elif cur_pos[1] == -240:
-            self.ai_paddle.setheading(UP)
-        
-        self.ai_paddle.fd(20)
-
+        # Paddle move delay
+        if time_now - self.last_movement > self.__INPUT_DELAY:
+            self.last_movement = time_now
+            
+            # Reached top of the screen?
+            if self.paddle.ycor() >= 240:
+                self.paddle.seth(DOWN)
+            
+            # Reached bottom of the screen?
+            if self.paddle.ycor() <= -240:
+                self.paddle.seth(UP)
+            
+            # Actual movement - Determines which direction paddle needs to go
+            if self.paddle.heading() == DOWN:
+                super().move_down()
+            elif self.paddle.heading == UP:
+                super().move_up()
+            # All else fails, go up
+            else:
+                self.paddle.seth(UP)
+                super().move_up()
