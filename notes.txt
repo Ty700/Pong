@@ -5,9 +5,9 @@ Components
     Screen
 
 Steps:
-    Create the Screen
+    Create the Screen - Done
 
-    Create a paddle
+    Create a paddle - Done 
         - W: 20px
         - H: 100px
         - x_pos: +350
@@ -16,9 +16,9 @@ Steps:
         - Key Presses: up and down
         
 
-    Implement movement of new Paddle
+    Implement movement of new Paddle - Done
 
-    Create another paddle
+    Create another paddle - Done
 
     Create the ball with movement
 
@@ -34,3 +34,10 @@ Future:
     - Implement a title screen with instructions
     - On the title screen users can pick the color of their paddle
     - Maybe a difficulty??
+    - Random affects
+        - Ball speed increase
+        - Multiple balls
+        - Ghost balls
+            - Multiple balls show up but only one is the real one and the user has to keep track of the right one
+        - Slow down AI or player
+    - Able to move paddle left/right

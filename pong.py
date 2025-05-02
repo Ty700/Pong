@@ -1,6 +1,7 @@
-from AIPaddle import AIPaddle
-from UserPaddle import UserPaddle
+from ai_paddle import AIPaddle
+from user_paddle import UserPaddle
 from turtle import Screen
+from ball import Ball
 import time
 
 def create_screen():
@@ -16,6 +17,7 @@ def pong():
     screen = create_screen()
     ai_paddle = AIPaddle()
     user_paddle = UserPaddle()
+    ball = Ball()
 
     game_is_on = True
 
@@ -25,9 +27,13 @@ def pong():
     
     while game_is_on:
         screen.update()
+        ball.move_ball()
         ai_paddle.move()
 
-        
+        # Ball collision with wall
+
+        if ball.ycor() > 300:
+            pass
         
 
 

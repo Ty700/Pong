@@ -1,5 +1,5 @@
 import time
-from Paddle import Paddle
+from paddle import Paddle
 
 UP = 90
 DOWN = 270
@@ -8,7 +8,7 @@ class AIPaddle(Paddle):
     def __init__(self):
         super().__init__(xpos=350)
         self.last_movement = 0
-        self.__INPUT_DELAY = 0.1 # 100ms
+        self.__INPUT_DELAY = 0.075 # 75ms
 
     def move(self):
         time_now = time.time()

@@ -1,11 +1,11 @@
-from Paddle import Paddle
+from paddle import Paddle
 import time
 
 class UserPaddle(Paddle):
     def __init__(self) -> None:
         super().__init__(xpos=-350)
         self.last_input_time = 0
-        self.__INPUT_DELAY = 0.1
+        self.__INPUT_DELAY = 0.05
 
     def move_up(self) -> None:
         time_now = time.time()
